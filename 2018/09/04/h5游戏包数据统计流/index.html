@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="下文是在工作中绘制的h5游戏包数据统计流程，h5游戏包即h5游戏的IOS或安卓app。 名词解释一、总体设计h5游戏包数据统计流程图，红色部分是数据上报的内容。 二、业务细节描述2.1 游戏后端上报数据取值游戏后端上报登录、创角、进游数据时，需要上报打包参数和广告统计参数。打包参数默认先从链接参数h5_tj_data获取，若为空再获取cookie字段sdkweb_tg解析上报；广告统计参数默认先从">
+<meta name="description" content="下文是在工作中整理的h5游戏包数据统计流程，h5游戏包即h5游戏的IOS或安卓app。 名词解释一、总体设计h5游戏包数据统计流程图，红色部分是数据上报的内容。 二、业务细节描述2.1 游戏后端上报数据取值游戏后端上报登录、创角、进游数据时，需要上报打包参数和广告统计参数。打包参数默认先从链接参数h5_tj_data获取，若为空再获取cookie字段sdkweb_tg解析上报；广告统计参数默认先从">
 <meta name="keywords" content="h5游戏业务">
 <meta property="og:type" content="article">
 <meta property="og:title" content="h5游戏包数据统计流">
 <meta property="og:url" content="http://threecoconut.github.io/2018/09/04/h5游戏包数据统计流/index.html">
 <meta property="og:site_name" content="linport&#39;s blog">
-<meta property="og:description" content="下文是在工作中绘制的h5游戏包数据统计流程，h5游戏包即h5游戏的IOS或安卓app。 名词解释一、总体设计h5游戏包数据统计流程图，红色部分是数据上报的内容。 二、业务细节描述2.1 游戏后端上报数据取值游戏后端上报登录、创角、进游数据时，需要上报打包参数和广告统计参数。打包参数默认先从链接参数h5_tj_data获取，若为空再获取cookie字段sdkweb_tg解析上报；广告统计参数默认先从">
+<meta property="og:description" content="下文是在工作中整理的h5游戏包数据统计流程，h5游戏包即h5游戏的IOS或安卓app。 名词解释一、总体设计h5游戏包数据统计流程图，红色部分是数据上报的内容。 二、业务细节描述2.1 游戏后端上报数据取值游戏后端上报登录、创角、进游数据时，需要上报打包参数和广告统计参数。打包参数默认先从链接参数h5_tj_data获取，若为空再获取cookie字段sdkweb_tg解析上报；广告统计参数默认先从">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://threecoconut.github.io/images/15396732763840.jpg">
-<meta property="og:updated_time" content="2018-10-16T08:58:09.132Z">
+<meta property="og:updated_time" content="2018-10-16T09:00:12.241Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="h5游戏包数据统计流">
-<meta name="twitter:description" content="下文是在工作中绘制的h5游戏包数据统计流程，h5游戏包即h5游戏的IOS或安卓app。 名词解释一、总体设计h5游戏包数据统计流程图，红色部分是数据上报的内容。 二、业务细节描述2.1 游戏后端上报数据取值游戏后端上报登录、创角、进游数据时，需要上报打包参数和广告统计参数。打包参数默认先从链接参数h5_tj_data获取，若为空再获取cookie字段sdkweb_tg解析上报；广告统计参数默认先从">
+<meta name="twitter:description" content="下文是在工作中整理的h5游戏包数据统计流程，h5游戏包即h5游戏的IOS或安卓app。 名词解释一、总体设计h5游戏包数据统计流程图，红色部分是数据上报的内容。 二、业务细节描述2.1 游戏后端上报数据取值游戏后端上报登录、创角、进游数据时，需要上报打包参数和广告统计参数。打包参数默认先从链接参数h5_tj_data获取，若为空再获取cookie字段sdkweb_tg解析上报；广告统计参数默认先从">
 <meta name="twitter:image" content="http://threecoconut.github.io/images/15396732763840.jpg">
 
 
@@ -324,7 +324,7 @@
       
 
       
-        <p>下文是在工作中绘制的h5游戏包数据统计流程，h5游戏包即h5游戏的IOS或安卓app。</p>
+        <p>下文是在工作中整理的h5游戏包数据统计流程，h5游戏包即h5游戏的IOS或安卓app。</p>
 <h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><h2 id="一、总体设计"><a href="#一、总体设计" class="headerlink" title="一、总体设计"></a>一、总体设计</h2><p>h5游戏包数据统计流程图，红色部分是数据上报的内容。<br><img src="/images/15396732763840.jpg" alt=""></p>
 <h2 id="二、业务细节描述"><a href="#二、业务细节描述" class="headerlink" title="二、业务细节描述"></a>二、业务细节描述</h2><h3 id="2-1-游戏后端上报数据取值"><a href="#2-1-游戏后端上报数据取值" class="headerlink" title="2.1 游戏后端上报数据取值"></a>2.1 游戏后端上报数据取值</h3><p>游戏后端上报登录、创角、进游数据时，需要上报打包参数和广告统计参数。打包参数默认先从链接参数h5_tj_data获取，若为空再获取cookie字段sdkweb_tg解析上报；广告统计参数默认先从链接获取相应的广告统计参数，若为空再获取cookie字段sdkweb_tj解析上报。</p>
 <h3 id="2-2-sdkweb-tg的编码规则"><a href="#2-2-sdkweb-tg的编码规则" class="headerlink" title="2.2 sdkweb_tg的编码规则"></a>2.2 sdkweb_tg的编码规则</h3><p>cookie名：sdkweb_tg<br>用竖线|分隔以下表格的每一个值，再base64 encode存cookie</p>
@@ -406,7 +406,7 @@
 </tr>
 </tbody>
 </table>
-<p>举例描述：base64 encode(IC=|DF=|OS=|AT=|DC=|PM=|BW=|AC=|RL=|PN=|PV=|SDKV=|IDFA=|ADID=|UEADID=|IMEI=|SDK_RF=)</p>
+<p>举例描述：<br>base64 encode(IC=|DF=|OS=|AT=|DC=|PM=|BW=|AC=|RL=|PN=|PV=|SDKV=|IDFA=|ADID=|UEADID=|IMEI=|SDK_RF=)</p>
 <h3 id="2-3-sdkweb-tj的编码规则"><a href="#2-3-sdkweb-tj的编码规则" class="headerlink" title="2.3 sdkweb_tj的编码规则"></a>2.3 sdkweb_tj的编码规则</h3><p>cookie名：sdkweb_tj<br>用竖线|分隔以下表格的每一个值，存cookie</p>
 <table>
 <thead>
@@ -446,7 +446,7 @@
 </tr>
 </tbody>
 </table>
-<p>举例描述：REFERER=|REFERER_PARAM=|AD_PARAM=|AD_TYPE=|BID=|LID=|EXT=</p>
+<p>举例描述：<br>REFERER=|REFERER_PARAM=|AD_PARAM=|AD_TYPE=|BID=|LID=|EXT=</p>
 <h3 id="2-4-特殊情况：广告页等未写cookie到新战略主域名时进入游戏需要带统计参数"><a href="#2-4-特殊情况：广告页等未写cookie到新战略主域名时进入游戏需要带统计参数" class="headerlink" title="2.4 特殊情况：广告页等未写cookie到新战略主域名时进入游戏需要带统计参数"></a>2.4 特殊情况：广告页等未写cookie到新战略主域名时进入游戏需要带统计参数</h3><p>对于一些广告页（域名与主域名不一样），或没有写入打包参数和统计参数cookie的页面进入游戏时，需要在游戏链接上带上统计参数，game.htm会根据参数写入sdkweb_tg和sdkweb_tj的cookie。</p>
 <table>
 <thead>
@@ -624,7 +624,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -635,7 +635,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
