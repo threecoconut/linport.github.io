@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="背景：三节课学员的优秀作业没有得到很好的展示，为了让更多人看到学员的优秀作业，同时验证会不会有人因为看了优秀作业来买课，本文将产出三节课“优秀作业展”的小程序MVP需求方案。  1、目标用户根据三节课官网对课程分类的描述与观察三节课学习群的用户备注，三节课“优秀作业展”的目标用户分为 （1）未参加课程且具有0-1年互联网产品/运营/新媒体经验的用户（包括想要入行、想要转行、刚入行的用户） （2）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linport&#39;s blog">
+<meta property="og:url" content="http://threecoconut.github.io/2019/08/29/三节课优秀作业小程序MVP产品/index.html">
+<meta property="og:site_name" content="linport&#39;s blog">
+<meta property="og:description" content="背景：三节课学员的优秀作业没有得到很好的展示，为了让更多人看到学员的优秀作业，同时验证会不会有人因为看了优秀作业来买课，本文将产出三节课“优秀作业展”的小程序MVP需求方案。  1、目标用户根据三节课官网对课程分类的描述与观察三节课学习群的用户备注，三节课“优秀作业展”的目标用户分为 （1）未参加课程且具有0-1年互联网产品/运营/新媒体经验的用户（包括想要入行、想要转行、刚入行的用户） （2）">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/5635443-06754b8b5034a521?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/5635443-457addbfdaf11356?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/5635443-3478efe4182d0717?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/5635443-b8a04e6083c5ce6f?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/5635443-788c520cf1c6b7ef?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/5635443-04a62d63e53fb298?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/5635443-f61215b880e44b41?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/5635443-e73277939f6b08ef?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-08-29T13:07:27.874Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="linport&#39;s blog">
+<meta name="twitter:description" content="背景：三节课学员的优秀作业没有得到很好的展示，为了让更多人看到学员的优秀作业，同时验证会不会有人因为看了优秀作业来买课，本文将产出三节课“优秀作业展”的小程序MVP需求方案。  1、目标用户根据三节课官网对课程分类的描述与观察三节课学习群的用户备注，三节课“优秀作业展”的目标用户分为 （1）未参加课程且具有0-1年互联网产品/运营/新媒体经验的用户（包括想要入行、想要转行、刚入行的用户） （2）">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/5635443-06754b8b5034a521?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://threecoconut.github.io/2019/08/29/三节课优秀作业小程序MVP产品/"/>
+
+
+
+
+
+  <title> | linport's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">linport's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-主页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            主页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://threecoconut.github.io/2019/08/29/三节课优秀作业小程序MVP产品/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="linport">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="linport's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-29T21:07:03+08:00">
+                2019-08-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>背景：三节课学员的优秀作业没有得到很好的展示，为了让更多人看到学员的优秀作业，同时验证<strong>会不会有人因为看了优秀作业来买课，</strong>本文将产出三节课“优秀作业展”的小程序MVP需求方案<strong>。</strong></p>
+</blockquote>
+<h1 id="1、目标用户"><a href="#1、目标用户" class="headerlink" title="1、目标用户"></a>1、目标用户</h1><p>根据三节课官网对课程分类的描述与观察三节课学习群的用户备注，三节课“优秀作业展”的目标用户分为</p>
+<p><strong>（1）未参加课程且具有0-1年互联网产品/运营/新媒体经验的用户（包括想要入行、想要转行、刚入行的用户）</strong></p>
+<p><strong>（2）未参加课程且具有1-5年互联网产品/运营/新媒体经验的用户</strong></p>
+<p><strong>（3）已参加课程的用户</strong></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5635443-06754b8b5034a521?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<h1 id="2、用户需求"><a href="#2、用户需求" class="headerlink" title="2、用户需求"></a>2、用户需求</h1><h2 id="2-1-通过社交网络挖掘用户需求"><a href="#2-1-通过社交网络挖掘用户需求" class="headerlink" title="2.1 通过社交网络挖掘用户需求"></a>2.1 通过社交网络挖掘用户需求</h2><p>由于MVP验证的是会不会有人因为看了优秀作业来买课，所以“优秀作业展”小程序的主要目标用户是有潜在购买课程意愿的那部分用户。在百度、百度贴吧、知乎搜索“三节课”的关键词，会出现例如“三节课<u><strong>怎么样</strong></u>”、“想报三节课的P1，不知道会不会有<u><strong>效果</strong></u>”、“三节课、半撇私塾、暖石等<strong><u>哪一个更适合</u></strong>零基础的小白？”的问题，用户提问这些问题是为了判断三节课是否值得购买。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5635443-457addbfdaf11356?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>在判断是否值得购买的问题上，用户主要关注的是<u><strong>三节课的课程质量</strong></u>、<strong><u>三节课学完后是否有效果</u></strong>、<strong><u>三节课较于其他学习平台是否有优势</u></strong>这三类问题。</p>
+<h2 id="2-2-竞品调研"><a href="#2-2-竞品调研" class="headerlink" title="2.2 竞品调研"></a>2.2 竞品调研</h2><p>“优秀作业”小程序的基本功能是展示三节课学员的优秀作业，也就是利用学员的反馈让其他人了解三节课学习的产出和效果，从而吸引其他人购买课程。</p>
+<p>为了了解竞品利用用户反馈宣传平台的功能现状，笔者调研了三节课的三个互联网学习平台竞品——起点学院（主营产品、运营课）、半撇私塾（主营新媒体课）、暖石（主营运营、营销），并总结了三个竞品在利用用户反馈宣传平台的功能特点：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5635443-3478efe4182d0717?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>从上表可以看出，起点学院的学员后花园功能与“优秀作业”的基本功能类似，都可以展示用户的优秀作业，其他两个竞品主要展示的是学员的反馈和感悟。其中，起点学院和暖石都展示了学员学习的最终成效，包括获得offer、职场转变经历。</p>
+<p>“优秀作业”小程序前期可以只展示优秀作业，后期再增加展示学员offer、反馈的功能。</p>
+<h2 id="2-3-总结：用户场景与需求"><a href="#2-3-总结：用户场景与需求" class="headerlink" title="2.3 总结：用户场景与需求"></a>2.3 总结：用户场景与需求</h2><p>综上，用户的主要需求是想了解三节课的课程质量和效果，下图按照“用户-场景-需求”的结构用思维导图总结了“优秀作业”小程序的需求和场景：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5635443-b8a04e6083c5ce6f?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<h1 id="3、产品核心定位"><a href="#3、产品核心定位" class="headerlink" title="3、产品核心定位"></a>3、产品核心定位</h1><p>前期，“优秀作业”小程序的核心定位应是展示三节课学员成果的小程序，为有0～5年经验的互联网产品/运营/新媒体经验的用户提供在三节课学习的选择依据。</p>
+<h1 id="4、“优秀作业”小程序MVP需求方案"><a href="#4、“优秀作业”小程序MVP需求方案" class="headerlink" title="4、“优秀作业”小程序MVP需求方案"></a>4、“优秀作业”小程序MVP需求方案</h1><h2 id="4-1-首要目标"><a href="#4-1-首要目标" class="headerlink" title="4.1 首要目标"></a>4.1 首要目标</h2><p>“优秀作业”小程序的首要目标是让用户阅读三节课学员的优秀作业，看课程详情并购买课程。所以MVP的主要功能是浏览优秀作业、看课程详情、购买课程。</p>
+<h2 id="4-2-用户行为流及每个流程涉及的产品功能"><a href="#4-2-用户行为流及每个流程涉及的产品功能" class="headerlink" title="4.2 用户行为流及每个流程涉及的产品功能"></a>4.2 用户行为流及每个流程涉及的产品功能</h2><p>根据首要目标，MVP的首页用户行为流是：进入作业列表页—进入作业详情页—进入课程详情页—支付购买。</p>
+<p>拆解产品的用户使用步骤及每个流程涉及的产品功能如下：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5635443-788c520cf1c6b7ef?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>进入课程详情页和支付购买可以再简化成由小程序跳转三节课课程详情h5页，简化后的用户行为流如下：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5635443-04a62d63e53fb298?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<h2 id="4-3-三节课“优秀作业展”小程序的MVP需求表"><a href="#4-3-三节课“优秀作业展”小程序的MVP需求表" class="headerlink" title="4.3 三节课“优秀作业展”小程序的MVP需求表"></a>4.3 三节课“优秀作业展”小程序的MVP需求表</h2><p>对用户流程中的产品功能点进行优先级排序，整理的三节课“优秀作业展”小程序的MVP需求表如下：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5635443-f61215b880e44b41?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<h1 id="5、验证MVP目标的指标"><a href="#5、验证MVP目标的指标" class="headerlink" title="5、验证MVP目标的指标"></a>5、验证MVP目标的指标</h1><p>”优秀作业“小程序MVP要验证<u><strong>会不会有人因为看了优秀作业来买课</strong></u>。可以通过观测关键指标来验证MVP，需要观测的关键指标如下：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5635443-e73277939f6b08ef?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/21/通过MWeb上传图片到hexo/" rel="next" title="如何在Hexo中使用MWeb编辑文档">
+                <i class="fa fa-chevron-left"></i> 如何在Hexo中使用MWeb编辑文档
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.png"
+                alt="linport" />
+            
+              <p class="site-author-name" itemprop="name">linport</p>
+              <p class="site-description motion-element" itemprop="description">记录是知识的沉淀</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1、目标用户"><span class="nav-number">1.</span> <span class="nav-text">1、目标用户</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2、用户需求"><span class="nav-number">2.</span> <span class="nav-text">2、用户需求</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-通过社交网络挖掘用户需求"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 通过社交网络挖掘用户需求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-竞品调研"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 竞品调研</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-总结：用户场景与需求"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 总结：用户场景与需求</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3、产品核心定位"><span class="nav-number">3.</span> <span class="nav-text">3、产品核心定位</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4、“优秀作业”小程序MVP需求方案"><span class="nav-number">4.</span> <span class="nav-text">4、“优秀作业”小程序MVP需求方案</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-首要目标"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 首要目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-用户行为流及每个流程涉及的产品功能"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 用户行为流及每个流程涉及的产品功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-三节课“优秀作业展”小程序的MVP需求表"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 三节课“优秀作业展”小程序的MVP需求表</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5、验证MVP目标的指标"><span class="nav-number">5.</span> <span class="nav-text">5、验证MVP目标的指标</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">linport</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
